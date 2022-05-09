@@ -51,4 +51,16 @@
             }
         }
     }
+mesure_time("auto5");
+mesure_time("car4");
+mesure_time("zo3");
+
+function mesure_time($mdp)
+{
+    $s = microtime(TRUE);
+    crackMDP($mdp);
+    $e = microtime(TRUE);
+    $exec = $e-$s;
+    echo "Time(".$mdp.") : " . number_format((float)$exec, 2, '.', '') . "s ";
+}
 ?>
